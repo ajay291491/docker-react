@@ -1,0 +1,18 @@
+# Base image from docker hub
+FROM node:alpine
+
+# Working directory within the container
+WORKDIR /app
+
+# Copying package.json to avoid cache bursting
+COPY package.json . 
+
+# Install the npm packages needed
+RUN npm install
+
+# Copy the directories inside container
+COPY . .
+
+# Start command for the container
+CMD ["npm", "run", "start"]
+
