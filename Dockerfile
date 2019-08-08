@@ -23,6 +23,7 @@ RUN npm run build
 #
 # Pulling the nginx image
 FROM nginx
+EXPOSE 80
 # |
 # Copy the build image '/app/build' from Conatiner with block alias 'build_instance' to nginix  document root
 RUN mkdir -p /usr/share/nginx/html
